@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,17 @@
   },
   "homepage": "https://github.com/zhuzz11/avalon2-spa#readme",
   "devDependencies": {
-    "webpack": "^3.8.1"
+    "clean-webpack-plugin": "^0.1.17",
+    "file-loader": "^1.1.5",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
-    "avalon2": "^2.2.9"
+    "avalon2": "^2.2.9",
+    "babel-polyfill": "^6.26.0",
+    "whatwg-fetch": "^2.0.3"
   }
 }
