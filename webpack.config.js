@@ -27,14 +27,36 @@ module.exports = {
                 }
             }
         }, {
-            test: /\.jpg$/,
-            use: ["file-loader"]
+            test: /\.(css|pcss)$/,
+            use: [
+                'style-loader',
+                'css-loader'
+            ]
         }, {
-            test: /\.png$/,
-            use: ["url-loader?mimetype=image/png"]
+            test: /\.(png|svg|jpe?g|gif)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 4096,
+                    name: '/asset/images/[name].[hash:8].[ext]'
+                }
+            }]
+        }, {
+            test: /\.(woff|woff2|eot|ttf|otf)$/,
+            use: {
+                loader: 'file-loader',
+                options: {
+                    name: '/assetfonts/[name].[hash:8].[ext]'
+                }
+            }
         }]
+
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: "./src/index.html"

@@ -1,3 +1,7 @@
+require("jquery");
+require("bootstrap");
+require('bootstrap/dist/css/bootstrap.css');
+require('./index.css');
 var avalon = require('avalon2')
 require('./mmRouter.js')
 
