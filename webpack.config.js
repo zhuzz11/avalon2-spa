@@ -7,7 +7,6 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     devtool: "source-map",
     entry: {
-        polyfills: './src/polyfills.js',
         index: "./src/index.js"
     },
     output: {

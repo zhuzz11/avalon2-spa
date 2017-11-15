@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>avalon2-mmRouter</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <style>
-            .tabs a{
-                display: inline-block;
-                margin-right: 1em;
-                height:20px;
-                line-height: 20px;
-                text-align: center;
-                
-            }
-        </style>
-        <script>
-       var modernBrowser = (
-         'fetch' in window &&
-         'assign' in Object
-       );
 
-       if ( !modernBrowser ) {
-         var scriptElement = document.createElement('script');
+<head>
+    <title>avalon2-mmRouter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+    .tabs a {
+        display: inline-block;
+        margin-right: 1em;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+    }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.bundle.js"></script>
+    <script src="js/respond.bundle.js"></script>
+    <![endif]-->
+    <script>
+    var modernBrowser = (
+        'fetch' in window &&
+        'assign' in Object
+    );
 
-         scriptElement.async = false;
-         scriptElement.src = '/polyfills.bundle.js';
-         document.head.appendChild(scriptElement);
-       }
-     </script>
-    </head>
-    <body ms-controller="test">
-        <h1>avalon2-mmRouter</h1>
-        <p>使用webpack对 avalon与mmRouter进行打包(ms-html切换卡)</p>
-        <p class="tabs">
-            <a id="aaa" href='#!/aaa'>aaa</a><br/>
-            <a href='#!/bbb'>bbb</a><br/>
-            <a href='#!/ccc'>ccc</a><br/>
-            <a href='#!/pager-1'>aaa1</a><br/>
-            <a href='#!/pager-2'>aaa2</a><br/>
-        </p>
+    if (!modernBrowser) {
+        var scriptElement = document.createElement('script');
 
-        <button ms-on-click="go()">跳到bbb路由</button>
-       
-        <div ms-html="@main"></div>
-    </body>
+        scriptElement.async = false;
+        scriptElement.src = '/polyfills.bundle.js';
+        document.head.appendChild(scriptElement);
+    }
+    </script>
+</head>
+
+<body ms-controller="test">
+    <h1>avalon2-mmRouter</h1>
+    <p>使用webpack对 avalon与mmRouter进行打包(ms-html切换卡)</p>
+    <p class="tabs">
+        <a id="aaa" href='#!/aaa'>aaa</a>
+        <br/>
+        <a href='#!/bbb'>bbb</a>
+        <br/>
+        <a href='#!/ccc'>ccc</a>
+        <br/>
+        <a href='#!/pager-1'>aaa1</a>
+        <br/>
+        <a href='#!/pager-2'>aaa2</a>
+        <br/>
+    </p>
+    <button ms-on-click="go()">跳到bbb路由</button>
+    <div ms-html="@main"></div>
+</body>
+
 </html>

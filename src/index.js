@@ -18,36 +18,8 @@ avalon.router.add("/pager-{count:\\d+}", function(count) {
 	return '/aaa?pager-' + count
 })
 
-
-var routeUrl = ["aaa", "bbb", "ccc"];
-
-/*routeUrl.forEach(function(item,i,array){
-	avalon.router.add("/"+item, function(param) {
-		require.ensure([],function(){
-                var init = require("./routes/"+item+".js");
-                init();
-            });
-	});
-})*/
-avalon.router.add("/:tab", function(param) {
-	if (param === routeUrl[0]) {
-		require.ensure([], function() {
-			var init = require("./routes/aaa.js");
-			init();
-		});
-	} else if (param === "bbb") {
-		require.ensure([], function() {
-			var init = require("./routes/bbb.js");
-			init();
-		});
-	} else if (param === "ccc") {
-		require.ensure([], function() {
-			var init = require("./routes/ccc.js");
-			init();
-		});
-	}
-})
-
+//路由配置文件，按需加载
+var router = require("./routes/getRouter.js");
 
 
 avalon.history.start({
@@ -59,13 +31,5 @@ var hash = location.hash.replace(/#!?/, '')
 avalon.router.navigate(hash || '/bbb', 2) //默认打开
 
 avalon.scan(document.body)
-
-fetch('https://jsonplaceholder.typicode.com/users')
-	.then(response => response.json())
-	.then(json => {
-		console.log('We retrieved some data! AND we\'re confident it will work on a variety of browser distributions.')
-		console.log(json)
-	})
-	.catch(error => console.error('Something went wrong when fetching this data: ', error))
 
 module.exports = vm;
