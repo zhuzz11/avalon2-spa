@@ -6,15 +6,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    .tabs a {
-        display: inline-block;
-        margin-right: 1em;
-        height: 20px;
-        line-height: 20px;
-        text-align: center;
-    }
-    </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -22,18 +13,18 @@
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script>
-    var modernBrowser = (
-        'fetch' in window &&
-        'assign' in Object
-    );
+        var modernBrowser = (
+            'fetch' in window &&
+            'assign' in Object
+        );
 
-    if (!modernBrowser) {
-        var scriptElement = document.createElement('script');
+        if (!modernBrowser) {
+            var scriptElement = document.createElement('script');
 
-        scriptElement.async = false;
-        scriptElement.src = '/polyfills.bundle.js';
-        document.head.appendChild(scriptElement);
-    }
+            scriptElement.async = false;
+            scriptElement.src = '/polyfills.bundle.js';
+            document.querySelector("head").appendChild(scriptElement);
+        }
     </script>
 </head>
 
@@ -66,10 +57,10 @@
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#/aaa">Reports</a></li>
-                    <li><a href="#/bbb">Analytics</a></li>
-                    <li><a href="#/ccc">Export</a></li>
+                    <li class="active"><a href="/">Overview <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#/aaa">aaa</a></li>
+                    <li><a href="#/bbb">bbb</a></li>
+                    <li><a href="#/ccc">ccc</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
                     <li><a href="">Nav item</a></li>

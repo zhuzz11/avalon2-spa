@@ -1,8 +1,8 @@
 var home = require("../../index.js");
 
-var img = require('./a.png')
-var img2 = require('./b.jpg')
-var a = require('./tab1.html')
+var img = require('./a.png');
+var img2 = require('./b.jpg');
+var a = require('./tab1.html');
 
 var avalon = require("avalon2");
 
@@ -12,8 +12,8 @@ avalon.define({
 	get:function(){
 		alert("123");
 	}
-})
+});
 
 module.exports = function(){
 	home.main = a;
-}
+};
