@@ -4,6 +4,7 @@ var path = require("path");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     devtool: "source-map",
@@ -80,6 +81,21 @@ module.exports = {
             minChunks: Infinity,
             // (with more entries, this ensures that no other module
             //  goes into the vendor chunk)
-        })
+        }),
+        new CopyWebpackPlugin([
+            //复制依赖js
+            {
+                from: 'src/lib',
+                to: "lib"
+            },
+            {
+                from: 'node_modules/es5-shim/es5-shim.min.js',
+                to: "lib"
+            },
+            {
+                from: 'node_modules/es5-shim/es5-sham.min.js',
+                to: "lib"
+            }
+        ])
     ]
 };
