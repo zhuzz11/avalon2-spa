@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/zhuzz11/avalon2-spa#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-latest": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
@@ -41,6 +44,7 @@
     "avalon2": "^2.2.9",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^3.3.7",
+    "es3ify-loader": "^0.2.0",
     "es5-shim": "^4.5.9",
     "es6-promise": "^4.1.1",
     "jquery": "^1.12.4",

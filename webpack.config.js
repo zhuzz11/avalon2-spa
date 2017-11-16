@@ -9,8 +9,8 @@ var CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
     devtool: "source-map",
     entry: {
-        index: "./src/index.js",
-        vendor: ['jquery', 'bootstrap', "avalon2"]
+        index: ["./src/index.js"],
+        vendor: ["babel-polyfill", 'jquery', 'bootstrap', "avalon2"]
     },
     output: {
         filename: "[name].[hash].js",
@@ -28,6 +28,17 @@ module.exports = {
     },
     module: {
         rules: [{
+            test: /.js$/,
+            use: [{
+                loader: 'babel-loader',
+                query: {
+                    presets: ['latest'] //按照最新的ES6语法规则去转换
+                }
+            }, {
+                loader: "es3ify-loader"
+            }],
+
+        }, {
             test: /\.html$/,
             use: {
                 loader: 'html-loader',
@@ -87,12 +98,10 @@ module.exports = {
             {
                 from: 'src/lib',
                 to: "lib"
-            },
-            {
+            }, {
                 from: 'node_modules/es5-shim/es5-shim.min.js',
                 to: "lib"
-            },
-            {
+            }, {
                 from: 'node_modules/es5-shim/es5-sham.min.js',
                 to: "lib"
             }
