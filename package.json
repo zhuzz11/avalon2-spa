@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --open"
+    "mock": "supervisor server.js",
+    "dev": "webpack-dev-server --open",
+    "start": "npm-run-all --parallel mock dev"
   },
   "repository": {
     "type": "git",
@@ -22,11 +24,14 @@
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
+    "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "npm-run-all": "^4.1.2",
     "style-loader": "^0.19.0",
+    "supervisor": "^0.12.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"

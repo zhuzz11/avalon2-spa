@@ -17,7 +17,13 @@ module.exports = {
         chunkFilename: 'route/[name].[hash:8].js'
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3009',
+                secure: false
+            }
+        }
     },
     module: {
         rules: [{
