@@ -1,21 +1,26 @@
-require("jquery");
-require("bootstrap");
-require('bootstrap/dist/css/bootstrap.css');
-require('./index.css');
+//require("babel-polyfill");
+require("es6-promise");
+require("babel-polyfill");
 var avalon = require('avalon2');
 require('./lib/mmRouter.js');
 
+require('./index.css');
+
+avalon.config({
+	debug: false
+});
 
 var vm = avalon.define({
 	$id: 'test',
 	main: '',
-	aaa: "第一页的内容",
-	bbb: "第二页的内容",
+	aaa: "第1页的内容",
+	bbb: "第223页的内容",
 	ccc: "第三页的内容",
 	go: function() {
 		avalon.router.navigate('/bbb', 2);
 	}
 });
+var a =1;
 
 avalon.router.add("/pager-{count:\\d+}", function(count) {
 	//返回新的hash用于设置地址栏
