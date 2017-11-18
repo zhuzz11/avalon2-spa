@@ -7,32 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/lib/css/bootstrap.min.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script type="text/javascript" src="/lib/es5-shim.min.js"></script>
-      <script type="text/javascript" src="/lib/es5-sham.min.js"></script>
-      <script src="/lib/js/html5shiv.min.js"></script>
-      <script src="/lib/js/respond.min.js"></script>
-    <![endif]-->
-    <script>
-        var modernBrowser = (
-            'fetch' in window &&
-            'assign' in Object
-        );
-
-        if (!modernBrowser) {
-            var scriptElement = document.createElement('script');
-
-            scriptElement.async = false;
-            scriptElement.src = '/polyfills.bundle.js';
-            document.querySelector("head").appendChild(scriptElement);
-        }
-    </script>
 </head>
 
 <body ms-controller="test">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -55,7 +33,7 @@
                 </form>
             </div>
         </div>
-    </nav>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
@@ -71,6 +49,14 @@
             </div>
         </div>
     </div>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="/lib/es5-shim.min.js"></script>
+      <script type="text/javascript" src="/lib/es5-sham.min.js"></script>
+      <script src="/lib/js/html5shiv.min.js"></script>
+      <script src="/lib/js/respond.min.js"></script>
+    <![endif]-->
     <script type="text/javascript" src="/lib/js/jquery.min.js"></script>
     <script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/js/avalon.js"></script>
