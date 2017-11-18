@@ -1,6 +1,5 @@
-//require("babel-polyfill");
-require("es6-promise");
-require("babel-polyfill");
+require('es6-promise').polyfill();
+
 var avalon = require('avalon2');
 require('./lib/mmRouter.js');
 
@@ -14,7 +13,7 @@ var vm = avalon.define({
 	$id: 'test',
 	main: '',
 	aaa: "第1页的内容",
-	bbb: "第223页的内容",
+	bbb: "第22344页的内容",
 	ccc: "第三页的内容",
 	go: function() {
 		avalon.router.navigate('/bbb', 2);

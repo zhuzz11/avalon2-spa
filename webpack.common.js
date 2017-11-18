@@ -9,8 +9,7 @@ var es3ifyPlugin = require('es3ify-webpack-plugin');
 
 module.exports = {
 	entry: {
-		index: ["./src/index.js"],
-		vendor: ["es6-promise", "babel-polyfill"]
+		index: ["./src/index.js"]
 	},
 	externals: {
 		jquery: 'jQuery',
@@ -25,9 +24,9 @@ module.exports = {
 		rules: [{
 			test: /.js$/,
 			//打包除这个文件之外的文件
-			//exclude: path.resolve(__dirname, "./node_modules"),
+			exclude: path.resolve(__dirname, "./node_modules"),
 			//打包包括的文件
-			//include: path.resolve(__dirname, "./src"),
+			include: path.resolve(__dirname, "./src"),
 			use: [{
 				loader: 'babel-loader',
 				query: {
