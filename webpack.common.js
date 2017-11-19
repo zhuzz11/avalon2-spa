@@ -83,7 +83,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "./src/index.html"
 		}),
-		new webpack.optimize.CommonsChunkPlugin({
+		/*new webpack.optimize.CommonsChunkPlugin({
 			name: "vendor",
 			// filename: "vendor.js"
 			// (Give the chunk a different name)
@@ -91,7 +91,7 @@ module.exports = {
 			minChunks: Infinity,
 			// (with more entries, this ensures that no other module
 			//  goes into the vendor chunk)
-		}),
+		}),*/
 		new es3ifyPlugin(),
 		new CopyWebpackPlugin([
 			//复制依赖js
@@ -116,6 +116,12 @@ module.exports = {
 			}, {
 				from: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
 				to: "lib/css"
+			}, {
+				from: 'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+				to: "lib/css"
+			}, {
+				from: 'node_modules/bootstrap/dist/fonts',
+				to: "lib/fonts"
 			}
 		])
 	]
