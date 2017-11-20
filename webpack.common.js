@@ -2,7 +2,6 @@ var webpack = require("webpack");
 var path = require("path");
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 var es3ifyPlugin = require('es3ify-webpack-plugin');
@@ -72,7 +71,6 @@ module.exports = {
 
 	},
 	plugins: [
-		new CleanWebpackPlugin(['dist']),
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",
